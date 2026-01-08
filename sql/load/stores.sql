@@ -1,5 +1,6 @@
-LOAD DATA INFILE 'C:/path/to/data/raw/stores.csv' 
-INTO TABLE stores 
-FIELDS TERMINATED BY ',' 
-LINES TERMINATED BY '\n' 
-IGNORE 1 ROWS;
+BULK INSERT stores
+FROM 'C:\FULL\ABSOLUTE\PATH\data\raw\stores.csv'
+WITH (
+    FORMAT = 'CSV',
+    FIRSTROW = 2
+);
