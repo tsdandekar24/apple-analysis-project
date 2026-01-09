@@ -1,5 +1,7 @@
-LOAD DATA INFILE 'C:/path/to/data/raw/warranty.csv' 
-INTO TABLE warranty 
-FIELDS TERMINATED BY ',' 
-LINES TERMINATED BY '\n' 
-IGNORE 1 ROWS;
+BULK INSERT warranty
+FROM 'C:\data\raw\warranty.csv'
+WITH (
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    FIRSTROW = 2
+);

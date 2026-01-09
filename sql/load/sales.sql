@@ -1,5 +1,7 @@
-LOAD DATA INFILE 'C:/path/to/data/raw/sales.csv' 
-INTO TABLE sales 
-FIELDS TERMINATED BY ',' 
-LINES TERMINATED BY '\n' 
-IGNORE 1 ROWS;
+BULK INSERT sales
+FROM 'C:\data\raw\sales.csv'
+WITH (
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    FIRSTROW = 2
+);
